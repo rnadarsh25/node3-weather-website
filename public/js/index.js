@@ -1,15 +1,6 @@
-console.log('Inside index.js');
-
-// fetch('http://puzzle.mead.io/puzzle')
-//   .then((res) => {
-//     res.json().then((data) => {
-//       console.log({ data });
-//     });
-//   })
-//   .catch((err) => console.log({ err }));
-
 const getWeatherDetails = (place) => {
-  return fetch(`http://localhost:3000/weather?address=${place}`)
+  // http://localhost:3000 but remove this for depoyment
+  return fetch(`/weather?address=${place}`)
     .then((res) => {
       return res.json().then((data) => {
         if (data.error) return data.error;
